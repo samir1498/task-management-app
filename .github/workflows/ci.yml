@@ -35,7 +35,7 @@ jobs:
 
       # Step 4: Build the Spring Boot application using Maven
       - name: Build with Maven
-        run: mvn --batch-mode --update-snapshots verify
+        run: cd backend/taskmanagement && mvn --batch-mode --update-snapshots verify
 
       # Step 5: Save Maven cache
       - name: Save Maven cache
