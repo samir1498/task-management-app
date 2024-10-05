@@ -36,4 +36,9 @@ public class TaskUsecaseImpl implements TaskUsecase {
         this.taskRepo.remove(id);
     }
 
+    @Override
+    public void updateTask(Task task) {
+        this.taskRepo.save(task);
+    }
+
 }

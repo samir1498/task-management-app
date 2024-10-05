@@ -10,4 +10,6 @@ public interface TaskUsecase {
     Task[] listTasks();
 
     void removeTask(int id);
+
+    void updateTask(Task task);
 }

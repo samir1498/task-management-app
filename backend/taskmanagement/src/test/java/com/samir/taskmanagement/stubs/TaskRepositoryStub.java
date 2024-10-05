@@ -1,5 +1,7 @@
 package com.samir.taskmanagement.stubs;
 
+import static org.assertj.core.api.Assertions.in;
+
 import java.util.Map;
 import java.util.Optional;
 
@@ -17,6 +19,10 @@ public class TaskRepositoryStub implements TaskRepository {
 
     @Override
     public Task save(Task task) {
+        if (this.tasks.containsKey(task.getId())) {
+            this.tasks.replace(task.getId(), task);
+            return this.tasks.get(task.getId());
+        }
         var id = ++count;
         task.setId(id);
         this.tasks.put(id, task);

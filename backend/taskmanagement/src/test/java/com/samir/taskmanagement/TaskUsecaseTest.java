@@ -107,5 +107,19 @@ class TaskUsecaseTest {
                 .isInstanceOf(NoSuchElementException.class);
     }
 
-    // TODO: add a test for updating
+    @Test
+    void itShouldUpdateTask() {
+        // Arrange
+        var task = underTest.createTask("task to update", "description of task to update");
+
+        // Act
+        task.setTitle("updated title");
+        task.setDescription("updated description");
+        underTest.updateTask(task);
+
+        // Assert
+        assertThat(task.getTitle()).isEqualTo("updated title");
+        assertThat(task.getDescription()).isEqualTo("updated description");
+
+    }
 }
