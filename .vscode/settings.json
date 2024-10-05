@@ -1,0 +1,6 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.autobuild.enabled": false,
+    "java.format.enabled": true,
+    "java.configuration.updateBuildConfiguration": "interactive",
+}
